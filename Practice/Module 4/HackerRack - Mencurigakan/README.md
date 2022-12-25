@@ -41,7 +41,7 @@ This problem is actually pretty simple, we just need to check every activities i
   
 Another condition we need to check is if there is a positive ***N*** input but we have already recorded it before without any log out activity recorded, then we have to put it in our both data structure and our suspicious list, because any log in activities must be recorded in our data structure but since it's suspicious, then we have to put it in our suspicious list too. Other than that we just casually put it in to our data structure for recording purpose.  
   
-There are actually a lot ways to implement this solution, but at the time I worked on this problem, I use vector data structure to save and check every activities input that's happening. The reason I choose vector is because I can easily erase an element in it using iterator without worrying to much about the index. You can find the C++ implementation source code in the same folder as this file.
+There are actually a lot ways to implement this solution, but at the time I worked on this problem, I use vector data structure to save and check every activities input that's happening. The reason I choose vector is because I can easily erase an element in it using iterator without worrying to much about the index. You can find the C++ implementation source code within the same folder as this file. 
 
 Thanks, CMIIW :thumbsup:
 

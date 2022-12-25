@@ -76,7 +76,7 @@ Peter's work is at position 5, which has priority scale of 8 (the biggest). So P
 ## Solution :
 The idea to solve this problem is to iterate through each task in the queue to find the biggest priority scale and mark it as printed while keeping track of the current print order. If it's already printed, then we move on to the next biggest priority scale task to print until we reach the Peter's work's position, and then we can stop the loop and print the current order variable.  
 
-Actually, it's not the best algorithm to solve this problem. There are lots of better way to solve it, but at the time I worked on this problem, it's the best way I can think of. You can find the C++ implementation source code in the same folder as this file.
+Actually, it's not the best algorithm to solve this problem. There are lots of better way to solve it, but at the time I worked on this problem, it's the best way I can think of. You can find the C++ implementation source code within the same folder as this file. 
 
 Thanks, CMIIW :thumbsup:
 
