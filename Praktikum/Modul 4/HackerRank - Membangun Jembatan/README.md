@@ -1,8 +1,21 @@
 # Membangun Jembatan (Building Bridges)
+
+[HackerRank : Membangun Jembatan](https://www.hackerrank.com/contests/alpro-its-sd-m4-e-2022/challenges/membangun-jembatan)
+
 ## Description :
 We are asked to help Yuta to count how many different bridges does the local government need to build to connect every population center (represented as the vertex) to the nearest consession (represented as the edge) with the given data in the form of a graph? (not include the bridge from the first vertex)
 
-### input :
+### Input Format :
+The first line is two space-seperated integers input, which the first integer ***V*** represents the number of vertices dan the second integer ***E*** represents the number of edges, followed by ***E*** lines which each contain ***V<sub>1</sub>*** and ***V<sub>2</sub>*** which indicate the edges in the graph.
+
+### Ouput Format :
+A number indicating how many bridges to build
+
+### Constraint :
+- 2 &le; ***V*** &le; 100
+- 0 &le; ***E*** &le; 100
+
+### Sample Input :
 ```
 6 3  
 1 2  
@@ -10,7 +23,7 @@ We are asked to help Yuta to count how many different bridges does the local gov
 5 6  
 ```
 
-### output :
+### Sample Output :
 ```
 2
 ```  
@@ -18,15 +31,15 @@ We are asked to help Yuta to count how many different bridges does the local gov
 ### Explanation :
 `6 3`  
   
-it means that we have 6 vertices with 3 edges total, there are :
+It means that we have 6 vertices with 3 edges total, there are :
   
-`1 2` , `3 4` , and `5 6`  
+`1 2` , `3 4` , and `5 6`. 
   
-so we need **3** bridges to build, as following picture,  
+So we need **3** bridges to build, as following picture,  
 
 <img width="428" alt="image" src="https://user-images.githubusercontent.com/105977864/209446075-1eafba6d-268d-4026-88ed-6d9cdb447ddb.png">  
   
-but since we exclue the main bridge (from vertex *1*), we just need to build **2** bridges only, which is to connect `3 4` and `5 6`.
+But since we exclue the main bridge (from vertex **1**), we just need to build **2** bridges only, which is to connect `3 4` and `5 6`.
 
 <br>
 
