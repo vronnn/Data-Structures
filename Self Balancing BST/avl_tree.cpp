@@ -93,7 +93,7 @@ int getBalanceFactor(nodeptr node){
 
 nodeptr AVL_insert(avlptr avl, nodeptr node, int value){
 
-    if(node == NULL) // udah mencapai leaf
+    if(node == NULL) // reaches the leaf
         return create_node(value);
     if(value < node->data)
         node->left = AVL_insert(avl, node->left, value);
@@ -106,11 +106,11 @@ nodeptr AVL_insert(avlptr avl, nodeptr node, int value){
 
     if(balanceFactor > 1 && value < node->left->data) // left skewed (left-left case)
         return leftCaseRotate(node);
-    if(balanceFactor > 1 && value > node->left->data) // left zig-zag (left-right case)
+    if(balanceFactor > 1 && value > node->left->data) // left-right zig-zag (left-right case)
 		return leftRightCaseRotate(node);
     if(balanceFactor < -1 && value > node->right->data) // right skewed (kanan-kanan case)
         return rightCaseRotate(node);
-    if(balanceFactor < -1 && value < node->right->data) // right zig-zag (right-left case)
+    if(balanceFactor < -1 && value < node->right->data) // right-left zig-zag (right-left case)
         return rightLeftCaseRotate(node);
 
     return node;
@@ -247,39 +247,17 @@ void postorder(avlptr avl){
     post(avl->root);
 }
 
-nodeptr cari_ayah(nodeptr root, int value){
-    nodeptr ayah = NULL;
-    while(root != NULL){
-        if(value < root->data){
-            ayah = root;
-            root = root->left;
-        }
-        else if(value > root->data){
-            ayah = root;
-            root = root->right;
-        }
-        else return ayah;
+int main()
+{
+    avlptr avl = init_avl();
+    for(int i = 1; i <= 10; i++){
+        insert_avl(avl,i);
     }
-    return ayah;
-}
-
-void print_ayah(avlptr avl, int value){
-    nodeptr temp = cari_ayah(avl->root, value);
-    if(temp == NULL) printf("Yah ga ketemu D: %d\n", value);
-    else printf("%d %d\n", temp->data, value);
-}
-
-int main(){
-    avlptr yuta = init_avl();
-    int n, x, q, y;
-    scanf("%d", &n);
-    while(n--){
-        scanf("%d", &x);
-        insert_avl(yuta, x);
+    inorder(avl);
+    puts("");
+    for(int i = 2; i <= 10; i+=2){
+        remove_avl(avl,i);
     }
-    scanf("%d", &q);
-    while(q--){
-        scanf("%d", &y);
-        print_ayah(yuta, y);
-    }
+    preorder(avl);
+    return 0;
 }

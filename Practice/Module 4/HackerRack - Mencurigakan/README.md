@@ -3,7 +3,7 @@
 [HackerRank : Mencurigakan](https://www.hackerrank.com/contests/alpro-its-sd-m4-e-2022/challenges/mencurigakan)
 
 ## Description :
-We are asked to help Yuta to count and find out who has used his website suspiciously, such as a user who hasn't indicated to be logged in but already recorded doing logged out and vice versa.
+We are asked to help Yuta to count and find anyone that uses his website that acts suspiciously, such as a user who hasn't indicated to be logged in but already recorded doing logged out or vice versa.
 
 ### Input Format :
 The first line is ***T*** which represents the number of activities watched by Yuta, followed by ***T*** lines which each contains ***N*** that represents the user and their activity. If the value of ***N*** is positive, then the user ***N*** is doing a log in activity and if the value of ***N*** is negative, then the user ***-N*** is doing a log out activity.  
