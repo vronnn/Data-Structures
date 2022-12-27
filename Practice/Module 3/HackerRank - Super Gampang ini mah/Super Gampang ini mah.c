@@ -13,68 +13,6 @@ typedef struct AVL_t{
     unsigned int size;
 }AVL, *avlptr;
 
-typedef struct queueNode_t {
-    int data;
-    struct queueNode_t *next;
-} QueueNode, *qnodeptr;
-
-typedef struct queue_t {
-    qnodeptr front,
-            rear;
-    unsigned size;
-} Queue, *queueptr;
-
-queueptr init_queue()
-{
-    queueptr que = (queueptr) malloc(sizeof(Queue));
-    que->size = 0;
-    que->front = NULL;
-    que->rear = NULL;
-    return que;
-}
-
-bool empty_que(queueptr que) {
-    return (que->front == NULL && que->rear == NULL);
-}
-
-void push_queue(queueptr que, int value)
-{
-    qnodeptr newNode = (qnodeptr) malloc(sizeof(QueueNode));
-    if (newNode) {
-        que->size++;
-        newNode->data = value;
-        newNode->next = NULL;
-
-        if (empty_que(que))
-            que->front = que->rear = newNode;
-        else {
-            que->rear->next = newNode;
-            que->rear = newNode;
-        }
-    }
-}
-
-void pop_queue(queueptr que)
-{
-    if (!empty_que(que)) {
-        qnodeptr temp = que->front;
-        que->front = que->front->next;
-        free(temp);
-
-        if (que->front == NULL)
-            que->rear = NULL;
-        que->size--;
-    }
-}
-
-int front_queue(queueptr que)
-{
-    if (!empty_que(que)) {
-        return (que->front->data);
-    }
-    return 0;
-}
-
 nodeptr create_node(int value) {
     nodeptr newNode = (nodeptr) malloc(sizeof(AVLNode));
     newNode->data = value;
@@ -93,6 +31,11 @@ nodeptr search(nodeptr root, int value) {
             return root;
     }
     return root;
+}
+
+int ser(avlptr avl, int value){
+    nodeptr temp = search(avl->root, value);
+    return temp->height;
 }
 
 int get_height(nodeptr node){
@@ -160,7 +103,7 @@ nodeptr AVL_insert(avlptr avl, nodeptr node, int value){
     if(value < node->data)
         node->left = AVL_insert(avl, node->left, value);
     else if(value > node->data)
-    	node->right = AVL_insert(avl, node->right, value);
+        node->right = AVL_insert(avl, node->right, value);
 
     node->height = 1 + max(get_height(node->left), get_height(node->right));
 
@@ -169,7 +112,7 @@ nodeptr AVL_insert(avlptr avl, nodeptr node, int value){
     if(balanceFactor > 1 && value < node->left->data) // skewed kiri (left-left case)
         return leftCaseRotate(node);
     if(balanceFactor > 1 && value > node->left->data) // kiri zig-zag (left-right case)
-		return leftRightCaseRotate(node);
+        return leftRightCaseRotate(node);
     if(balanceFactor < -1 && value > node->right->data) // skewed kanan (kanan-kanan case)
         return rightCaseRotate(node);
     if(balanceFactor < -1 && value < node->right->data) // kanan zig-zag (right-left case)
@@ -189,9 +132,9 @@ nodeptr AVL_remove(nodeptr node, int value){
     if(node == NULL)
         return node;
     if(value > node->data)
-    	node->right = AVL_remove(node->right, value);
+        node->right = AVL_remove(node->right, value);
     else if(value < node->data)
-    	node->left = AVL_remove(node->left, value);
+        node->left = AVL_remove(node->left, value);
     else{
         nodeptr temp;
         if((node->left == NULL)||(node->right == NULL)){
@@ -216,7 +159,7 @@ nodeptr AVL_remove(nodeptr node, int value){
         }
     }
 
-	if(node == NULL) return node;
+    if(node == NULL) return node;
 
     node->height = max(get_height(node->left),get_height(node->right)) + 1;
 
@@ -274,54 +217,59 @@ void remove_avl(avlptr avl, int value){
     }
 }
 
-void inor(nodeptr root, queueptr que) {
+void inor(nodeptr root) {
     if (root){
-        inor(root->left, que);
-        push_queue(que, root->data);
-        inor(root->right, que);
+        inor(root->left);
+        printf("%d ", root->data);
+        inor(root->right);
     }
 }
 
-void inorder(avlptr avl, queueptr que){
-    inor(avl->root, que);
+void inorder(avlptr avl){
+    inor(avl->root);
 }
 
-void preorder(nodeptr root) {
+void pre(nodeptr root) {
     if (root){
         printf("%d ", root->data);
-        preorder(root->left);
-        preorder(root->right);
+        pre(root->left);
+        pre(root->right);
     }
 }
 
-void pre(avlptr avl){
-    preorder(avl->root);
+void preorder(avlptr avl){
+    pre(avl->root);
 }
 
+void post(nodeptr root) {
+    if (root){
+        post(root->left);
+        post(root->right);
+        printf("%d ", root->data);
+    }
+}
+
+void postorder(avlptr avl){
+    post(avl->root);
+}
+
+//1   2   3   4   5   6    7    8    9   10
+//4, 24, 43, 64, 84, 103, 124, 144, 163, 184
 int main(){
-    avlptr pohon = init_avl();
-    queueptr temp = init_queue();
-    int q, c, n, i = 1;
-    scanf("%d", &q);
-    while(q--){
-        scanf("%d", &c);
-        if(c == 1){
-            scanf("%d", &n);
-            insert_avl(pohon, n);
-        }
-        if(c == 2){
-            scanf("%d", &n);
-            if(find_avl(pohon, n)){
-                inorder(pohon, temp);
-                while(front_queue(temp) != n){
-                    pop_queue(temp);
-                    i++;
-                }
-                printf("%d\n", i);
-                while(!empty_que(temp)) pop_queue(temp);
-                i = 1;
-            }
-            else printf("Data tidak ada\n");
-        }
+    avlptr avl = init_avl();
+    int arr[1000],i;
+    arr[1] = 4;
+    for(i = 2; i < 1000; i++){
+        arr[i] = arr[i-1] + 20;
     }
+    for(i = 3; i < 1000; i+=3){
+        arr[i]--;
+    }
+    int t, a;
+    scanf("%d", &t);
+    while(t--){
+        scanf("%d", &a);
+        insert_avl(avl, arr[a]);
+    }
+    inorder(avl);
 }

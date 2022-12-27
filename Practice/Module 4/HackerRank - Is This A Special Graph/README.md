@@ -5,18 +5,18 @@
 ## Description :
 The point is that we are asked to check if some unweighted undirected graph is just a graph or a tree or a linked list.
 
-### Input Format :
+## Input Formats :
 The first line is ***T*** that represents the number of graph that needs to be checked, followed by ***V*** and ***E*** which each represents the number of vertex and the number of edges in the current graph, followed by the next ***E*** lines which each contain ***V<sub>1</sub>*** and ***V<sub>2</sub>*** which indicate the edges in the current graph.
 
-### Constraint :
+## Constraints :
 - 1 &le; ***T*** &le; 10
 - 2 &le; ***V*** &le; 100
 - ***V***-1 &le; ***E*** &le; 200
 
-### Output Format :
+## Output Formats :
 ***T*** rows each containing **"This graph is a linked list"** if it can be classified as a linked list or **"This graph is a tree"** if it can be classified as a tree or **"This graph is a graph"** if it's just a basic graph.
 
-### Sample Input :
+## Input Sample :
 ```
 3
 4 3
@@ -34,13 +34,13 @@ The first line is ***T*** that represents the number of graph that needs to be c
 3 4
 2 3
 ```  
-### Sample Output :
+## Output Sample :
 ```
 Graf ini adalah linked list
 Graf ini adalah tree
 Graf ini adalah graf biasa
 ```  
-### Explanation :
+## Explanation :
 There are **3** graphs, which are :
 ```
 4 3

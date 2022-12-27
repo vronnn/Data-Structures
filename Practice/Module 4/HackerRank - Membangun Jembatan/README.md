@@ -5,17 +5,21 @@
 ## Description :
 We are asked to help Yuta to count how many different bridges does the local government need to build to connect every population center (represented as the vertex) to the nearest consession (represented as the edge) with the given data in the form of a graph? (not include the bridge from the first vertex)
 
-### Input Format :
+## Input Formats :
 The first line is two space-seperated integers input, which the first integer ***V*** represents the number of vertices dan the second integer ***E*** represents the number of edges, followed by ***E*** lines which each contain ***V<sub>1</sub>*** and ***V<sub>2</sub>*** which indicate the edges in the graph.
 
-### Ouput Format :
+## Constraints :
+- 2 &le; ***V*** &le; 100
+- 0 &le; ***E*** &le; 100
+
+## Ouput Formats :
 A number indicating how many bridges to build
 
 ### Constraint :
 - 2 &le; ***V*** &le; 100
 - 0 &le; ***E*** &le; 100
 
-### Sample Input :
+## Input Sample :
 ```
 6 3  
 1 2  
@@ -23,12 +27,12 @@ A number indicating how many bridges to build
 5 6  
 ```
 
-### Sample Output :
+## Output Sample :
 ```
 2
 ```  
 
-### Explanation :
+## Explanation :
 `6 3`  
   
 It means that we have 6 vertices with 3 edges total, there are :
