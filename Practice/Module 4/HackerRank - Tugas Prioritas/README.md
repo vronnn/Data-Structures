@@ -5,18 +5,18 @@
 ## Description :
 We are asked to help Peter to calculate the order in which his task will be printed based on it's position and it's priority scale among others printing task on the queue (each has it's own position and priority scale).  
 
-### Input Format :
+## Input Formats :
 The first line is an integer ***T*** which represents the number of testcase. The next line is two integers ***N*** and ***M*** which each represents the number task in the queue and the position of Peter's task. And the next ***N*** lines contain each task's priority scale from 1 to 9. If there are any task with the same priority scale, print whatever comes first.  
 
-### Constraint :
+## Constraints :
 - 1 &le; ***T*** < 100
 - 1 &le; ***N*** < 1000
 - 1 &le; ***M*** < ***N*** - 1  
 
-### Output Format :
+## Output Formats :
 A line contains the order in which Peter's work will be completed.  
 
-### Sample Input :
+## Input Sample :
 ```
 5
 5 4
@@ -31,7 +31,7 @@ A line contains the order in which Peter's work will be completed.
 3 2 5 6 7 8 3 4 3 5
 ```  
 
-### Sample Output :
+## Output Sample :
 ```
 1
 1
@@ -40,7 +40,7 @@ A line contains the order in which Peter's work will be completed.
 1
 ```  
 
-### Explanation :  
+## Explanation :  
 The sample input has 5 testcase, the first one is :  
 ```
 5 4

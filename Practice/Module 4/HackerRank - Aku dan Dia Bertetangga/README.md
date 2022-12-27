@@ -9,7 +9,7 @@ Given a graph that represents the cities as shown below :
   
 We are asked to print the neighbors of a city along with their distance with the given input format,
   
-### Input Formats :
+## Input Formats :
 1. The first line is an integer **n** which represents the number of cities in the graph.
 2. The second line are **n** space-seperated inputs, which is the name of the cities,  
 ex : **n = 2**, then the input can be **Jakarta Bandung**.
@@ -29,12 +29,12 @@ Jakarta Denpasar Sumba Surabaya Palu
 Surabaya
 ```
 
-### Constraints :
+## Constraints :
 - 1 &le; **n** &le; 1000
 - **a** &le; **n** - 1
 - 1 &le; **x** &le; 5000
 
-### Output Format :
+## Output Formats :
 print the neighbors and distance of the requested city name with the following format :  
   
 ```
@@ -43,7 +43,7 @@ print the neighbors and distance of the requested city name with the following f
 
 >NOTE : if the requested city doesn't have a neoghbor, output "TIDAK TERSEDIA"
   
-### Sample Input :
+## Input Sample :
 ```
 5
 Jakarta Denpasar Sumba Surabaya Palu
@@ -55,12 +55,12 @@ Jakarta Denpasar Sumba Surabaya Palu
 Surabaya
 ```  
 
-### Sample Output :
+## Output Sample :
 ```
 (Jakarta, 200) (Denpasar, 80) (Sumba, 300) (Palu, 1000) 
 ```  
 
-### Explanation :
+## Explanation :
 We are asked to output every neighbors of Surabaya along with their distance. We can see that Surabaya is in the 4<sup>th</sup> place on the second line input, therefore, we can immediately look at the 4 line right after it. this line shows that Surabaya has 4 neighbors, which are **Jakarta for 200 km, Denpasar for 80 km, Sumba for 300 km, and Palu for 1000 km**.
 
 

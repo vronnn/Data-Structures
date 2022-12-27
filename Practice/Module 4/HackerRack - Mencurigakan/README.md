@@ -5,17 +5,17 @@
 ## Description :
 We are asked to help Yuta to count and find anyone that uses his website that acts suspiciously, such as a user who hasn't indicated to be logged in but already recorded doing logged out or vice versa.
 
-### Input Format :
+## Input Formats :
 The first line is ***T*** which represents the number of activities watched by Yuta, followed by ***T*** lines which each contains ***N*** that represents the user and their activity. If the value of ***N*** is positive, then the user ***N*** is doing a log in activity and if the value of ***N*** is negative, then the user ***-N*** is doing a log out activity.  
 
-### Constraint :
+## Constraints :
 - 1 &le; ***T*** &le; 1000
 - -100 &le; ***N*** &le; 100, ***N*** &notin; 0  
 
-### Output Format :
+## Output Formats :
 A number ***R*** which represents the number of suspicious activities, followed by ***R*** rows containing users who have been recorded as having suspicious activities.  
 
-### Sample Input :
+## Input Sample :
 ```
 6
 1
@@ -26,14 +26,14 @@ A number ***R*** which represents the number of suspicious activities, followed 
 -3
 ```  
 
-### Sample Output :
+## Output Sample :
 ```
 2
 2
 3
 ```  
 
-### Explanation :
+## Explanation :
 There are 6 activities and 3 users, namely 1, 2, and 3. The first activity is user 1 logging in, followed by user 2 who is also logging in. But there is something suspicious in the third activity, which is user 2 is logging in again without logging out first, it means that we should add user 2 to our suspicous list. Then the next activity is user 2 logging out. followed by user 1 logging out too. But in the last activity, there is user 3 that logging out without logging in first. This is definitely going in to our suspicious list. So in the end, we have 2 suspicious activities, which were done by user 2 and user 3.  
 
 ## Solution :
