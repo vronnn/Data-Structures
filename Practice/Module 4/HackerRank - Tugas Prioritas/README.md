@@ -2,21 +2,21 @@
 
 [HackerRank : Tugas Prioritas](https://www.hackerrank.com/contests/alpro-its-sd-m4-e-2022/challenges/tugas-prioritas)
 
-## Description :
+### Description :
 We are asked to help Peter to calculate the order in which his task will be printed based on it's position and it's priority scale among others printing task on the queue (each has it's own position and priority scale).  
 
-## Input Formats :
+### Input Formats :
 The first line is an integer ***T*** which represents the number of testcase. The next line is two integers ***N*** and ***M*** which each represents the number task in the queue and the position of Peter's task. And the next ***N*** lines contain each task's priority scale from 1 to 9. If there are any task with the same priority scale, print whatever comes first.  
 
-## Constraints :
+### Constraints :
 - 1 &le; ***T*** < 100
 - 1 &le; ***N*** < 1000
 - 1 &le; ***M*** < ***N*** - 1  
 
-## Output Formats :
+### Output Formats :
 A line contains the order in which Peter's work will be completed.  
 
-## Input Sample :
+### Input Sample :
 ```
 5
 5 4
@@ -31,7 +31,7 @@ A line contains the order in which Peter's work will be completed.
 3 2 5 6 7 8 3 4 3 5
 ```  
 
-## Output Sample :
+### Output Sample :
 ```
 1
 1
@@ -40,7 +40,7 @@ A line contains the order in which Peter's work will be completed.
 1
 ```  
 
-## Explanation :  
+### Explanation :  
 The sample input has 5 testcase, the first one is :  
 ```
 5 4
@@ -73,7 +73,7 @@ The fifth testacase is :
 Peter's work is at position 5, which has priority scale of 8 (the biggest). So Peter's work will be printed first  
 
 
-## Solution :
+### Solution :
 The idea to solve this problem is to iterate through each task in the queue to find the biggest priority scale and mark it as printed while keeping track of the current print order. If it's already printed, then we move on to the next biggest priority scale task to print until we reach the Peter's work's position, and then we can stop the loop and print the current order variable.  
 
 Actually, it's not the best algorithm to solve this problem. There are lots of better way to solve it, but at the time I worked on this problem, it's the best way I can think of. You can find the C++ implementation source code within the same folder as this file. 

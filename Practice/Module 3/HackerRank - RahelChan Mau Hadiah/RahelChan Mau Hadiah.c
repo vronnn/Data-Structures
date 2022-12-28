@@ -289,16 +289,28 @@ void inorder(avlptr avl, queueptr que){
     inor(avl->root, que);
 }
 
-void preorder(nodeptr root) {
+void pre(nodeptr root) {
     if (root){
         printf("%d ", root->data);
-        preorder(root->left);
-        preorder(root->right);
+        pre(root->left);
+        pre(root->right);
     }
 }
 
-void pre(avlptr avl){
-    preorder(avl->root);
+void preorder(avlptr avl){
+    pre(avl->root);
+}
+
+void post(nodeptr root) {
+    if (root){
+        post(root->left);
+        post(root->right);
+        printf("%d ", root->data);
+    }
+}
+
+void postorder(avlptr avl){
+    post(avl->root);
 }
 
 int main(){

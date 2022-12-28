@@ -2,21 +2,21 @@
 
 [HackerRank : Is This A Special Graph](https://www.hackerrank.com/contests/alpro-its-sd-m4-e-2022/challenges/is-this-a-special-graph)
 
-## Description :
+### Description :
 The point is that we are asked to check if some unweighted undirected graph is just a graph or a tree or a linked list.
 
-## Input Formats :
+### Input Formats :
 The first line is ***T*** that represents the number of graph that needs to be checked, followed by ***V*** and ***E*** which each represents the number of vertex and the number of edges in the current graph, followed by the next ***E*** lines which each contain ***V<sub>1</sub>*** and ***V<sub>2</sub>*** which indicate the edges in the current graph.
 
-## Constraints :
+### Constraints :
 - 1 &le; ***T*** &le; 10
 - 2 &le; ***V*** &le; 100
 - ***V***-1 &le; ***E*** &le; 200
 
-## Output Formats :
+### Output Formats :
 ***T*** rows each containing **"This graph is a linked list"** if it can be classified as a linked list or **"This graph is a tree"** if it can be classified as a tree or **"This graph is a graph"** if it's just a basic graph.
 
-## Input Sample :
+### Input Sample :
 ```
 3
 4 3
@@ -34,13 +34,13 @@ The first line is ***T*** that represents the number of graph that needs to be c
 3 4
 2 3
 ```  
-## Output Sample :
+### Output Sample :
 ```
 Graf ini adalah linked list
 Graf ini adalah tree
 Graf ini adalah graf biasa
 ```  
-## Explanation :
+### Explanation :
 There are **3** graphs, which are :
 ```
 4 3
@@ -73,7 +73,7 @@ Third graph :
 Classified as a basic graph,  
 <img width="348" alt="image" src="https://user-images.githubusercontent.com/105977864/209461031-19057ca1-48c2-49c3-b133-903c331a098d.png">  
   
-## Solution :
+### Solution :
 First, we need to know what seperates graph from tree and from linked list. a linked list vertex can't have more than one edge while tree and graph can. and on the other side Tree can't have circular edges while graph can. These things are what seperates graph from them.  
   
 So the next problem is how to check if a graph has more than one edge or not. This can be easily done by checking iteratively each vertex if they have more than an edge (or after saved in a data structure check if their size is more than 2). if they have, then they can't be a linked list, instead, they could be a tree or a graph. But if they don't, it means that they are a linked list. In this checkpoint, we can put a flag variable to keep track.  
