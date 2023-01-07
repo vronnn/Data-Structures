@@ -4,7 +4,7 @@ Self Balancing BST are height-balanced [binary search tree]() that automaticaly 
 It is possible since these operations were designed with precautionary measures against boundlessly increasing tree height property that maintains their height to be logarithmic, so all of these operations will take O(log n) time on average.  
 
 There are several trees that apply this Self Balancing BST concept, some of them are :  
-***Red-Black Tree, AVL Tree, B-Tree, etc.***
+***Red-Black Tree, AVL Tree, and B-Tree.***
 
 <br>
 
