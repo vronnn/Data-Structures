@@ -7,7 +7,7 @@ This repository is my journey studying data structures and their implementation 
 - Binary Search Tree &rarr; BST's explanation and implementation
 - C Explicit Containers &rarr; C implementation of C++ STL containers 
 - C++ Standard Template Library &rarr; Explanations and each container's implementation
-- Practice &rarr; solving data structure's category problems
+- Practice &rarr; solving data structure category problems
 - Self Balancing BST &rarr; Explanation, comparison, and implementation of AVL & Red-Black Tree
 
 
